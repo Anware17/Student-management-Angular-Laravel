@@ -1,0 +1,40 @@
+
+<div>
+    <nav class="navbar navbar-expand navbar-dark bg-dark">
+      <a routerLink="login"  class="navbar-brand">Gestion des Etudiants</a>
+      <div class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a routerLink="etudiants" class="nav-link">Etudiants</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="rechercher" class="nav-link">Rechercher</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="ajouter" class="nav-link">Ajouter</a>
+        </li>
+      </div>
+    </nav>
+  
+    <div class="container mt-3">
+      <router-outlet></router-outlet>
+    </div>
+ 
+    
+  </div>  
+ <!--   
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Gestion Etudiants</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="etudiants">Etudiants</a>
+      </li>
+      <li class="nav-item" *ngIf="!isLogged">
+        <a class="nav-link" routerLink="login">S'identifier</a>
+      </li>
+    </ul>
+  </div>
+</nav>-->

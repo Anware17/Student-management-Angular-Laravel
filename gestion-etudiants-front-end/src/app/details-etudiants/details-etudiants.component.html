@@ -1,0 +1,59 @@
+<div style="width: 400px; margin: auto;">
+    <div *ngIf="currentEtudiant" class="edit-form">
+      <h4>Etudiant</h4>
+      <form>
+        <div class="form-group">
+          <label for="nom">Nom</label>
+          <input
+            type="text"
+            class="form-control"
+            id="nom"
+            [(ngModel)]="currentEtudiant.nom"
+            name="nom"
+          />
+        </div>
+        <div class="form-group">
+          <label for="prenom">Prénom</label>
+          <input
+            type="text"
+            class="form-control"
+            id="prenom"
+            [(ngModel)]="currentEtudiant.prenom"
+            name="prenom"
+          />
+        </div>
+  
+        <div class="form-group">
+            <label for="classe">Classe</label>
+            <input
+              type="text"
+              class="form-control"
+              id="classe"
+              [(ngModel)]="currentEtudiant.classe"
+              name="classe"
+            />
+          </div>
+      </form>
+  
+      <button class="btn btn-danger" (click)="deleteEtudiant()">
+        Supprimer
+      </button>
+  
+      <button
+        type="submit"
+        class=" btn btn-success"
+        (click)="updateEtudiant()" >
+     
+        Modifier
+      </button>
+
+      <button class="btn btn-dark " (click)="onCancel()">Annuler</button>
+
+      <p>{{ message }}</p>
+    </div>
+  
+    <div *ngIf="!currentEtudiant">
+      <br />
+      <p>Impossible d'accéder à cet étudiant...</p>
+    </div>
+  </div>

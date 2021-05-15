@@ -1,0 +1,59 @@
+<div class="list row">
+    <div class="col-md-8">
+      <div class="input-group mb-3">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Recherché par nom"
+          [(ngModel)]="nom"
+        />
+        <div class="input-group-append">
+          <button
+            class="btn btn-outline-secondary"
+            type="button"
+            (click)="searchNom()"
+          >
+           Recherche
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <h4>Nom d'étudiant cherché</h4>
+      <ul class="list-group">
+        <li
+          class="list-group-item"
+          *ngFor="let etudiant of etudiants; let i = index"
+          [class.active]="i == currentIndex"
+          (click)="setActiveEtudiant(etudiant, i)"
+        >
+          {{ etudiant.nom }}
+        </li>
+      </ul>
+    </div>
+    <div class="col-md-6">
+      <div *ngIf="currentEtudiant">
+        <h4>Etudiant</h4>
+        <div>
+          <label><strong>Nom:</strong></label> {{currentEtudiant.nom}}
+        </div>
+        <div>
+          <label><strong>Prénom:</strong></label>
+          {{ currentEtudiant.prenom }}
+        </div>
+        <div>
+          <label><strong>Classe:</strong></label>
+          {{ currentEtudiant.classe }}
+        </div>
+  
+        <a class="btn btn-warning" routerLink="/etudiants/{{currentEtudiant.id}}">
+          Editer
+        </a>
+      </div>
+  
+      <div *ngIf="!currentEtudiant">
+        <br/>
+        <p>Veuillez cliquer sur le nom de l'étudiant...</p>
+      </div>
+    </div>
+  </div>  
